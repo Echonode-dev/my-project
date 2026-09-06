@@ -1,0 +1,77 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.unhook.app'
+    compileSdk 35
+
+    defaultConfig {
+        // NOTE: applicationId cannot be changed after the first Play Store
+        // upload. Decide the final id before shipping (e.g. com.unhook.wellbeing).
+        applicationId "com.unhook.app"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "0.1.0-m1"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // Room: export schemas for migration tests (M5); Java 8 annotationProcessor, not kapt.
+                arguments = [
+                        'room.schemaLocation': "$projectDir/schemas",
+                        'room.incremental'   : 'true'
+                ]
+            }
+        }
+    }
+
+    // ================================================================
+    // HARD CONSTRAINT: Java 8 language level only. No Kotlin, no Java 9+
+    // language features. coreLibraryDesugaringEnabled only backports the
+    // java.time API (which IS a Java 8 API) to Android 7.x devices.
+    // ================================================================
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // ---- Data layer (wired in M5): Room on top of SQLCipher ----
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+    implementation 'androidx.sqlite:sqlite:2.4.0'
+    implementation 'net.zetetic:android-database-sqlcipher:4.5.4'
+    // (Newer SQLCipher lives at net.zetetic:sqlcipher-android — we migrate in M9 if desired.)
+
+    // ---- Background machinery (M3 detection FGS, M7 weekly report) ----
+    implementation 'androidx.lifecycle:lifecycle-service:2.8.7'
+    implementation 'androidx.work:work-runtime:2.10.0'
+
+    // java.time backport for minSdk 24/25
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.2'
+
+    // Privacy pillar: deliberately absent —
+    //   * no com.google.firebase.*, no analytics, no ads, no crash uploaders
+    //   * androidx.security:security-crypto is DEPRECATED (2024) — we hand-roll
+    //     a ~60-line AndroidKeyStore wrapper in M9 instead (fully auditable).
+}

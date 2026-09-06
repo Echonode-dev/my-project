@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Calm teal = focus; amber = the single warning accent.
+         No red urgency colors anywhere: no dark patterns (P2). -->
+    <color name="unhook_teal">#0F766E</color>
+    <color name="unhook_teal_dark">#0B4F4A</color>
+    <color name="unhook_amber">#B45309</color>
+    <color name="unhook_ink">#1C1917</color>
+    <color name="unhook_white">#FFFFFF</color>
+    <color name="gray">#6B7280</color>
+</resources>

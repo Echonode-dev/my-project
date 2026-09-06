@@ -1,0 +1,6 @@
+// Top-level build file.
+// Unhook is a PURE JAVA (Java 8) Android project — hard constraint #1.
+// Note there is deliberately NO Kotlin plugin anywhere in this build.
+plugins {
+    id 'com.android.application' version '8.7.3' apply false
+}

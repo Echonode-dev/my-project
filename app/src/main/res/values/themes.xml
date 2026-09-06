@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Unhook" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/unhook_teal</item>
+        <item name="colorOnPrimary">@color/unhook_white</item>
+        <item name="colorSecondary">@color/unhook_amber</item>
+    </style>
+</resources>

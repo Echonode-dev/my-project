@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Unhook</string>
+
+    <!-- ======== Onboarding (every permission gets a why-screen FIRST) ======== -->
+    <string name="ob_welcome_title">Hi. Unhook breaks the auto-open habit.</string>
+    <string name="ob_welcome_body">Three promises before we touch a single permission:</string>
+    <string name="ob_pillar_privacy">Everything runs on this phone. There is no account, no server, and this app has no INTERNET permission — it physically cannot phone home. One tap in Settings wipes everything, forever.</string>
+    <string name="ob_pillar_screen">Unhook exists to give you time back, including from itself. It will use about 15 seconds of your day. No feeds, no streaks, no guilt.</string>
+    <string name="ob_pillar_offline">Every permission is explained in plain English before Android asks, and you can revoke any of them whenever you want.</string>
+    <string name="ob_begin">Choose your trigger apps</string>
+
+    <string name="ob_triggers_title">Which apps hook you?</string>
+    <string name="ob_triggers_body">Pick the apps you open on autopilot. Unhook will interrupt the habit loop — gently, one change at a time.</string>
+    <string name="ob_save_continue">Save and continue</string>
+    <string name="ob_triggers_skip">Skip for now — I just want the baseline numbers first</string>
+
+    <string name="ob_usage_title">Why we need “Usage access”</string>
+    <string name="ob_usage_body">Unhook needs to notice when a trigger app opens. Android only allows this through the “Usage access” special permission.</string>
+    <string name="ob_usage_see">What we can see: WHICH app opened, WHEN, and for how long. That is all.</string>
+    <string name="ob_usage_never">What we can never see: screen content, keystrokes, notifications, photos, messages, contacts. Unhook has no code that could read them, and no internet to send them anywhere.</string>
+    <string name="ob_usage_revoke">You can revoke this any time in Settings. Unhook will keep showing your dashboard and stop watching.</string>
+    <string name="ob_usage_open">Open Usage access settings</string>
+    <string name="ob_later">I will do this later</string>
+
+    <string name="ob_overlay_title">Why we need “Display over other apps”</string>
+    <string name="ob_overlay_body">When a trigger app opens, Unhook draws a brief pause screen (about 6 seconds) over it — a breath, one question, then you decide.</string>
+    <string name="ob_overlay_does">What this allows: showing that pause screen the moment you open Instagram, TikTok, YouTube and friends.</string>
+    <string name="ob_overlay_never">What it does not do: record the screen, block touches after the pause, or change what other apps do.</string>
+    <string name="ob_overlay_open">Open display-over-apps settings</string>
+    <string name="ob_overlay_skip">Skip — pauses will be less reliable, but nothing breaks</string>
+
+    <string name="ob_notif_title">Why we need notifications</string>
+    <string name="ob_notif_body">One quiet notification shows that monitoring is on. And at most once a week you get your Insight Report. That is every notification you will ever see from Unhook — it is hard-coded, not a promise we might break.</string>
+    <string name="ob_notif_allow">Allow notifications</string>
+
+    <string name="ob_security_title">Security check</string>
+    <string name="ob_security_body">Before we start, Unhook verifies its own integrity and creates the encryption keys for your local database. Your data will be encrypted with a key that never leaves this phone’s secure hardware.</string>
+    <string name="ob_security_ok">Integrity verified • encryption ready (AES-256, hardware-backed key)</string>
+    <string name="ob_security_tampered">WARNING: this install is not signed like the one that created your data. Reinstall from a trusted source.</string>
+    <string name="ob_start">Start Unhook</string>
+    <string name="ob_status_granted">Granted</string>
+    <string name="ob_status_waiting">Not yet — tap the button below</string>
+
+    <!-- ======== Interstitial / walls ======== -->
+    <string name="breathe_in">breathe in</string>
+    <string name="breathe_out">breathe out</string>
+    <string name="interstitial_breathe_first">One breath first, then you decide.</string>
+    <string name="interstitial_question_full">You open %1$s about %2$d times today, usually around %3$s. Still want in?</string>
+    <string name="interstitial_question_opens">You have opened %1$s %2$d times today. Still want in?</string>
+    <string name="interstitial_question_plain">Still want in on %1$s?</string>
+    <string name="interstitial_yes">Yes, open it</string>
+    <string name="interstitial_not_now">Not now</string>
+    <string name="interstitial_need_it">I really need it</string>
+    <string name="wall_title_limit">%1$s — daily limit reached</string>
+    <string name="wall_title_schedule">%1$s is resting right now</string>
+    <string name="wall_body_limit">You asked for this limit. No guilt if you need to break it — but if it can wait, tomorrow-you will be glad.</string>
+    <string name="wall_body_schedule">This is your scheduled quiet window. If something genuinely needs you in there, that is allowed — it just gets logged so the numbers stay honest.</string>
+
+    <!-- ======== Suggestions ======== -->
+    <string name="suggestion_nice">Good catch. Instead of scrolling:</string>
+    <string name="suggestion_home">Take me home</string>
+    <string name="sugg_walk_title">2-minute walk</string>
+    <string name="sugg_walk_body">Stand up, walk to the farthest room or around the block. The urge usually fades before you get back.</string>
+    <string name="sugg_water_title">Drink a glass of water</string>
+    <string name="sugg_water_body">Oldest trick in the book because it works: hands busy, brain reset.</string>
+    <string name="sugg_stretch_title">2-minute stretch</string>
+    <string name="sugg_stretch_body">Neck rolls, shoulder shrugs, touch your toes. Wind-down for the body, wind-down for the scroll urge.</string>
+    <string name="sugg_focus_title">Start a 25-minute focus timer</string>
+    <string name="sugg_focus_body">Open the thing you were avoiding and give it one pomodoro. The phone can wait 25 minutes.</string>
+    <string name="sugg_journal_title">One journal line</string>
+    <string name="sugg_journal_body">Write the one thing on your mind right now. Naming it beats numbing it.</string>
+    <string name="sugg_call_title">Message someone you like</string>
+    <string name="sugg_call_body">Not a story, not a post — an actual person. Two lines. Real contact beats the feed.</string>
+
+    <!-- ======== Dashboard ======== -->
+    <string name="security_chip_ok">Security: verified • on-device only</string>
+    <string name="security_chip_bad">Security: WARNING</string>
+    <string name="security_warning_generic">Integrity warning: app data or signature does not match this install. Consider Erase Everything and a clean reinstall.</string>
+    <string name="dash_reclaimed_title">Time reclaimed</string>
+    <string name="dash_reclaimed_week">+ %1$s this week</string>
+    <string name="dash_today_title">Today</string>
+    <string name="dash_total">Screen time: %1$s</string>
+    <string name="dash_pickups">Pickups: %1$d</string>
+    <string name="dash_longest">Longest session: %1$s</string>
+    <string name="dash_apps_title">Top apps today</string>
+    <string name="chart_no_data">Grant Usage access to see app numbers</string>
+    <string name="dash_coach_title">Your coach</string>
+    <string name="dash_stage">Stage: %1$s</string>
+    <string name="stage_baseline">Baseline (days 1–3, watching, not blocking)</string>
+    <string name="stage_gentle">Gentle (pauses on your #1 trigger app)</string>
+    <string name="stage_steady">Steady (pauses on all trigger apps)</string>
+    <string name="stage_full">Full (limits and schedules unlocked)</string>
+    <string name="dash_report_line">This week: %1$d trigger opens • %2$s reclaimed • %3$s%% vs last week</string>
+    <string name="coach_softened">Rough stretch — goals softened for 24 h. Smaller steps count.</string>
+    <string name="pulse_title">Was your last long session actually worth it?</string>
+    <string name="pulse_yes">Yes</string>
+    <string name="pulse_not_really">Not really</string>
+    <string name="dash_settings_title">Settings</string>
+    <string name="dash_monitor_toggle">Monitoring on</string>
+    <string name="dash_pick_triggers">Choose trigger apps</string>
+    <string name="dash_replay_onboarding">Replay onboarding / permissions</string>
+    <string name="dash_erase">Erase Everything</string>
+
+    <!-- ======== Erase ======== -->
+    <string name="erase_title">Erase Everything?</string>
+    <string name="erase_body">This wipes the usage database, the ML model, encryption keys and all settings. There is no server copy — this is the only copy. The app then returns to onboarding.</string>
+    <string name="erase_next">Continue</string>
+    <string name="erase_title2">Really erase?</string>
+    <string name="erase_body2">After this, the deleted database cannot be decrypted even by this app: the key that unlocked it will be destroyed. This cannot be undone.</string>
+    <string name="erase_confirm">Erase everything</string>
+
+    <!-- ======== Notifications ======== -->
+    <string name="notif_channel_monitoring">Monitoring</string>
+    <string name="notif_channel_monitoring_desc">Quiet, permanent notice that Unhook is watching app switches on-device</string>
+    <string name="notif_monitoring_title">Unhook is watching quietly</string>
+    <string name="notif_monitoring_text">On-device only. Tap to open your numbers.</string>
+    <string name="notif_channel_insights">Insight reports</string>
+    <string name="notif_channel_insights_desc">At most one per week: your triggers, trends, and one suggestion</string>
+    <string name="report_notification_title">Your weekly insight</string>
+    <string name="report_notification_text">%1$d trigger opens this week • %2$s reclaimed</string>
+    <string name="report_trend_down">Down %1$d%% vs last week — that is real progress.</string>
+    <string name="report_trend_up">Up %1$d%% vs last week — no guilt, let’s aim smaller.</string>
+    <string name="report_trend_flat">About the same as last week — steady is fine.</string>
+</resources>
