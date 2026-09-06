@@ -12,6 +12,7 @@ import com.unhook.app.data.entity.DailyAggregateEntity;
 import com.unhook.app.data.entity.FeedbackEntity;
 import com.unhook.app.data.entity.ModelWeightsEntity;
 import com.unhook.app.data.entity.SessionEntity;
+import com.unhook.app.data.entity.SettingsEntity;
 import com.unhook.app.data.entity.UsageEventEntity;
 
 import java.nio.ByteBuffer;
