@@ -1,5 +1,6 @@
 package com.unhook.app.data.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -12,6 +13,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "settings_kv")
 public class SettingsEntity {
     @PrimaryKey
+    @NonNull
     public String key;
     public String value;
 }
