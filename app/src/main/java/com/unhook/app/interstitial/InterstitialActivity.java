@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -71,7 +73,16 @@ public class InterstitialActivity extends AppCompatActivity {
 
         boolean wall = "WALL".equals(mode);
         if ("GRAYSCALE".equals(mode)) {
-            getWindow().getDecorView().setColorFilter(grayMatrix());
+            View decor = getWindow().getDecorView();
+            Drawable bg = decor.getBackground();
+            if (bg != null) {
+                bg.setColorFilter(grayMatrix());
+            } else {
+                // Fallback: apply color filter via a Paint on the view's hardware layer.
+                Paint p = new Paint();
+                p.setColorFilter(grayMatrix());
+                decor.setLayerType(View.LAYER_TYPE_HARDWARE, p);
+            }
         }
 
         LinearLayout root = new LinearLayout(this);
@@ -162,7 +173,7 @@ public class InterstitialActivity extends AppCompatActivity {
     private void onRelapse() {
         answered = true;
         recordLabel(1, "WALL");
-        CoachEngine.onRelapse(new AppExecutors(UnhookApplication.get().executors()),
+        CoachEngine.onRelapse(UnhookApplication.get().executors(),
                 UnhookRepository.get());
         finish();
     }
