@@ -1,5 +1,6 @@
 package com.unhook.app.data.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 
 /**
@@ -10,7 +11,9 @@ import androidx.room.Entity;
  */
 @Entity(tableName = "daily_aggregates", primaryKeys = {"date", "pkg"})
 public class DailyAggregateEntity {
+    @NonNull
     public String date;     // yyyy-MM-dd, local zone
+    @NonNull
     public String pkg;
     public long foregroundMs;
     public int opens;
