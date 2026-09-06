@@ -1,6 +1,7 @@
 package com.unhook.app.interstitial;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Typeface;
@@ -20,6 +21,7 @@ import androidx.core.content.ContextCompat;
 import com.unhook.app.R;
 import com.unhook.app.UnhookApplication;
 import com.unhook.app.coach.CoachEngine;
+import com.unhook.app.core.AppExecutors;
 import com.unhook.app.data.UnhookRepository;
 import com.unhook.app.detection.EventHandler;
 import com.unhook.app.ml.LogisticRegressionModel;
@@ -160,7 +162,7 @@ public class InterstitialActivity extends AppCompatActivity {
     private void onRelapse() {
         answered = true;
         recordLabel(1, "WALL");
-        CoachEngine.onRelapse(UnhookApplication.get().executors().diskIo(),
+        CoachEngine.onRelapse(new AppExecutors(UnhookApplication.get().executors()),
                 UnhookRepository.get());
         finish();
     }
