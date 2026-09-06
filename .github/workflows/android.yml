@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: set up JDK 17
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         java-version: '17'
         distribution: 'temurin'
@@ -35,3 +35,4 @@ jobs:
       with:
         name: app-release.apk
         path: app/build/outputs/apk/release/app-release.apk
+
