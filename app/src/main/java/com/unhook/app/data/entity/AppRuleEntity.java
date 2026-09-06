@@ -1,5 +1,6 @@
 package com.unhook.app.data.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -11,6 +12,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "app_rules")
 public class AppRuleEntity {
     @PrimaryKey
+    @NonNull
     public String pkg;
     public String mode = "INTERSTITIAL";
     public int dailyLimitMin = 30;
